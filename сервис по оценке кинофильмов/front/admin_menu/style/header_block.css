@@ -1,0 +1,367 @@
+.header_block{
+    width: 100%;
+    padding: 50px;
+    padding-top: 2%;
+    height: 90%;
+    display: none;
+}
+
+.cinema_all_registration{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    display: none;
+}
+
+.cinema_all{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.open_header_page{
+    display: flex;
+}
+.close_page{
+    display: none;
+}
+
+.header_block_filter select{
+    color: white;
+    float: right;
+    outline: none;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #dc3545;
+    border-radius: 10px;
+}
+
+.header_block_filter option{
+    background-color: black;
+}
+
+.header_block_filter option:hover{
+    box-shadow: 0 0 10px 100px orange inset;;
+}
+
+.header_block_filter option:checked{
+    background-color: #dc3545;
+}
+
+.header_block_filter{
+    gap: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    color: white;
+    width: 100%;
+    justify-content: left;
+    justify-items: left;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.header_block_filter h2{
+    white-space: nowrap;
+    color: #dc3545;
+}
+
+.header_block_filter div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    justify-items: right;
+     gap: 50px;
+}
+
+.header_block_filter button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.list_cinema{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.example-2{
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    max-width: 35%;
+}
+
+.example-2 .wrapper {
+    position: relative;
+    display: block;
+    height: 100%;
+    background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
+}
+
+.example-2 .wrapper img{
+    box-shadow: none !important;
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.example-2 .wrapper:hover .menu-content span {
+    transform: translate(-50%, -10px);
+    opacity: 1;
+    font-size: 14px;
+}
+
+
+.menu-content i{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.example-2 .header {
+    color: #fff;
+    padding: 1em;
+}
+.example-2 .header::before, .example-2 .header::after {
+    content: '';
+    display: table;
+}
+.example-2 .header::after {
+    clear: both;
+}
+.example-2 .header .date {
+    float: left;
+    font-size: 12px;
+}
+.example-2 .menu-content {
+    float: right;
+}
+.example-2 .menu-content li {
+    margin: 0 8px;
+    margin-top: 8px;
+    position: relative;
+}
+.example-2 .menu-content span {
+    transition: all 0.3s;
+    opacity: 0;
+}
+.example-2 .data {
+    color: #fff;
+    transform: translateY(calc(70px + 4em));
+}
+.example-2 .title a {
+    color: #fff;
+}
+.example-2 .button {
+    display: block;
+    width: 100px;
+    margin: 2em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    font-weight: 700;
+}
+.example-2 .button::after {
+    content: '\2192';
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 0.3s;
+}
+.example-2 .button:hover::after {
+    transform: translate(5px, -50%);
+    opacity: 1;
+}
+
+.card {
+    float: left;
+    padding: 0 1.7rem;
+    width: 50%;
+}
+.card .menu-content {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+    content: '';
+    display: table;
+}
+.card .menu-content::after {
+    clear: both;
+}
+.card .menu-content li {
+    display: inline-block;
+}
+.card .menu-content a {
+    color: #fff;
+}
+.card .menu-content span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    transform: translate(-50%, 0);
+}
+.card .wrapper {
+    background-color: #fff;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+.card .wrapper:hover .data {
+    transform: translateY(0);
+}
+.card .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+}
+.card .data .content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+.card .author {
+    font-size: 12px;
+}
+.card .title {
+    margin-top: 10px;
+}
+.card .text {
+    height: 70px;
+    margin: 0;
+}
+.card input[type='checkbox'] {
+    display: none;
+}
+.card input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+}
+
+.add_cinema_block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.add_cinema_block_image{
+    height: 100%;
+    width: 35%;
+}
+
+.add_cinema_block_image img{
+    width: 100%;
+    height: 100%;
+}
+
+.add_cinema_block_params{
+    width: 63%;
+    height: 100%;
+}
+
+.add_cinema_block_params ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-flow: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.add_cinema_block_params div{
+    color: #dc3545;
+}
+
+.add_cinema_block_params span{
+    color:white
+}
+
+.add_cinema_block_params input{
+    padding: 7px;
+    outline: none;
+}
+
+.add_cinema_block_params li{
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    margin-bottom: 15px;
+}
+
+.add_cinema_block_params li label{
+    color: #dc3545;
+}
+
+.add_cinema_block_params textarea{
+    height: 230px;
+}
+
+.add_cinema_block_image{
+    display: flex;
+    flex-flow: column;
+}
+
+.add_cinema_block_image input{
+    position: absolute;
+    z-index:  15;
+    opacity: 0;
+}
+
+.add_cinema_block_image label{
+    height: 5%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.inp_block select{
+    padding: 8px;
+}
+
+.add_cinema_block_params  .error i {
+    right: -40px;
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.add_cinema_block_params .success i {
+    right: -40px;
+    visibility: visible;
+    color: #2ecc71;
+}
+
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+        <link rel="stylesheet" href="./style/card.css" type="text/css">
+        <link rel="stylesheet" href="./style/profile.css" type="text/css">
+        <link rel="stylesheet" href="./style/style.css" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <a href="#">
+                <img src="./images/w512h5121339361119cinema.png" height="45px" width="45px">
+                КиноСервис
+            </a>
+            <div class="item_list_nav">
+                <ul>
+                    <li onclick="toolClick(this,document.getElementById('card_block'))" class="open_tool">Главная</li>
+                    <li onclick="toolClick(this,document.getElementById('header_block'))">История</li>
+                    <li onclick="toolClick(this,document.getElementById('profile_block'))">Профиль</li>
+                    <li onclick="window.location.href='../autorization/autorization.html';">Выход</li>
+                </ul>
+            </div>
+        </nav>
+        <div id="liveAlertPlaceholder"></div>
+        <div class="profile_block" id="profile_block" >
+            <form style="width: 20%;" id="settins_form">
+                <div class="inp_block img_block">
+                    <img src="./images/Icon.jpg">
+                    <input onchange="changePhoto(this)" type="file" name="" id="profil_photo">
+                    <label for="profil_photo">Загрузить фото</label>
+                </div>
+                <div class="inp_block">
+                    <label>Ваше имя</label>
+                    <input id="sett_name">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Вашу фамилию</label>
+                    <input id="sett_last_name">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваше отчество</label>
+                    <input id="sett_patronymic">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваш login</label>
+                    <input id="sett_login">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваш password</label>
+                    <input id="sett_password">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <button type="submit" class="btn btn-outline-danger">Сохранить</button>
+            </form>
+        </div>
+        <div class="card_block" id="card_block">
+            <div style="width: 100%;">
+                <div class="header_block_filter">
+                    <h2>Новинки на нашем сервисе</h2>
+                    <div style="width: 100%;">
+                      <select onchange="sortFilm(this)">
+                        <option>Все фильмы</option>
+                        <option>Кинокомикс</option>
+                        <option>Фантастика</option>
+                        <option>Вестерн</option>
+                        <option>Боевик</option>
+                        <option>Мультфильм</option>
+                        <option>Детектив</option>
+                        <option>Драма</option>
+                        <option>Исторический фильм</option>
+                        <option>Ужасы</option>
+                        <option>Комедия</option>
+                        <option>Мелодрама</option>
+                        <option>Музыкальный фильм</option>
+                        <option>Нуар</option>
+                        <option>Политический фильм</option>
+                        <option>Приключенческий фильм</option>
+                        <option>Сказка</option>
+                        <option>Трагедия</option>
+                        <option>Трагикомедия</option>
+                      </select>
+                    </div>
+                </div>
+            <div class="list_card" id="list_card">
+
+                    <div class="cellphone-container">    
+                        <div class="movie">       
+                          <div class="menu"><i class="fa-regular fa-heart material-icons" onclick="takeLike(this)"></i><div class="menu_rating">10</div></div>
+                          <img class="movie-img" src="https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg">
+                          <div class="text-movie-cont">
+                            <div class="mr-grid">
+                              <div class="col1">
+                                <h1>Interstellar</h1>
+                                <ul class="movie-gen">
+                                  <li>PG-13  /</li>
+                                  <li>2h 49min  /</li>
+                                  <li>Adventure, Drama, Sci-Fi,</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="mr-grid summary-row">
+                              <div class="col2">
+                                <h5>SUMMARY</h5>
+                              </div>
+                              <div class="col2 rating">
+                                 <ul class="movie-likes">
+                                  <li class="rating"><i class="fa-solid fa-heart"></i>124</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="mr-grid">
+                              <div class="col1">
+                                <p class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great 
+                                Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </p>
+                              </div>
+                            </div>
+                            <div class="mr-grid action-row">
+                            <button class="watch-btn"><h3><i class="fa-solid fa-star"></i>Оценить</h3>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                  </div>
+            </div>
+        </div>
+        <div class="history_block">
+          <h2><i class="fa-solid fa-users"></i>История оценок</h2>
+          <table id="table_account" class="table table-dark table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Аватар</th>
+                  <th scope="col">ФИО</th>
+                  <th scope="col">Логин</th>
+                  <th scope="col">Статус</th>
+                  <th scope="col">Роль</th>
+                  <th scope="col">#</th>
+                </tr>
+              </thead>
+              <tbody id="tbody_account">
+                <tr>
+                    <td scope="col">#</td>
+                    <td scope="col">Аватар</td>
+                    <td scope="col">ФИО</td>
+                    <td scope="col">Логин</td>
+                    <td scope="col">Статус</td>
+                    <td scope="col">Роль</td>
+                    <td scope="col">Дата регистрации</td>
+                    <td scope="col">#</td>
+                  </tr>
+              </tbody>
+        </table>  
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Выберите оценку</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-body_header">
+                  <input hidden id="id_cinema_rating">
+                  <h1 id="rating_index">10<i class="fa-solid fa-star"></i></h1>
+                </div>
+                <div class="modal-body_body">
+                  <i onclick="up(this)" class="fa-solid fa-arrow-up"></i>
+                  <i onclick="donw(this)" class="fa-solid fa-arrow-down"></i>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" onclick="sendRating()">Отправить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js" ></script>
+        <script src="./js/nav_bar.js"></script>
+        <script src="./js/action.js"></script>
+        <script src="./js/ini.js"></script>
+        <script src="./js/validation.js"></script>
+    </body>
+</html>

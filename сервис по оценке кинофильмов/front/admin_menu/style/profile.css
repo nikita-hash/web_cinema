@@ -1,0 +1,124 @@
+.profile_block{
+    width: 100%;
+    padding: 50px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: none;
+}
+
+.profile_block img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile_block button{
+    width: 100%;
+}
+
+.profile_block label{
+    color: #e74c3c;
+    font-weight: 650;
+}
+
+.inp_block{
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.img_block label{
+    cursor: pointer;
+}
+
+.img_block{
+    gap: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.img_block input{
+    z-index: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.inp_block small{
+    visibility: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.inp_block input{
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    font-family: inherit;
+    padding-right: 35px;
+}
+
+.error input{
+    border: 2px solid #e74c3c;
+}
+
+.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+
+.inp_block small{
+    visibility: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.inp_block i{
+    color: red;
+    font-size: 25px;
+    visibility: hidden;
+    top: 33px;
+    right: 10px;
+    position: absolute;
+}
+
+
+.inp_block input{
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    font-family: inherit;
+    padding-right: 35px;
+}
+
+.error input{
+    border: 2px solid #e74c3c;
+}
+
+.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.error i{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.success i{
+    visibility: visible;
+    color: #2ecc71;
+}

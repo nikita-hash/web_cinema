@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+        <link rel="stylesheet" href="./style/account.css" type="text/css">
+        <link rel="stylesheet" href="./style/statistica.css" type="text/css">
+        <link rel="stylesheet" href="./style/profile.css" type="text/css">
+        <link rel="stylesheet" href="./style/header_block.css" type="text/css">
+        <link rel="stylesheet" href="./style/style.css" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <a href="#">
+                <img src="./images/w512h5121339361119cinema.png" height="45px" width="45px">
+                КиноСервис
+            </a>
+            <div class="item_list_nav">
+                <ul>
+                    <li onclick="toolClick(this,document.getElementById('account_block'))" class="open_tool">Аккаунты</li>
+                    <li onclick="toolClick(this,document.getElementById('header_block'))">Кино</li>
+                    <li onclick="toolClick(this,document.getElementById('statistic_block'))">Статистика</li>
+                    <li onclick="toolClick(this,document.getElementById('profile_block'))">Профиль</li>
+                    <li onclick="window.location.href='../autorization/autorization.html';">Выход</li>
+                </ul>
+            </div>
+        </nav>
+        <div id="liveAlertPlaceholder"></div>
+        <div class="header_block" id="header_block">
+            <div class="cinema_all_registration" id="cinema_all_registration" style="width: 100%;">
+              <div class="header_block_filter">
+                <button onclick="registrationAllPage()" style="width: 10%;">Назад <i class="fa-solid fa-arrow-left"></i></button>
+                <h2 >Регистрация фильма</h2>
+            </div >
+              <div class="add_cinema_block">
+                <div class="add_cinema_block_image">
+                  <img id="photo_cinema_img" src="https://kvmarvel.ru/wp-content/uploads/2019/01/avengers-endgame-final-poster.jpg">
+                  <input type="file" id="photo_cinema" onchange="changePhoto(this)">
+                  <label for="photo_cinema">Загрузить фото</label>
+                </div>
+                <div class="add_cinema_block_params">
+                  <form id="fomr_film">
+                  <ul>
+                    <li class="inp_block error">
+                      <label>Введите название фильма</label>
+                      <input id="name_film" onkeyup="changeText(this)">
+                      <i class="fa-solid fa-circle-info"></i>
+                    </li>
+                    <li class="inp_block success">
+                      <label>Год выпуска</label>
+                      <select id="years_film">
+                          <option>2023</option>
+                          <option>2022</option>
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                          <option>2018</option>
+                          <option>2017</option>
+                          <option>2016</option>
+                          <option>2015</option>
+                          <option>2014</option>
+                          <option>2013</option>
+                          <option>2012</option>
+                          <option>2011</option>
+                          <option>2010</option>
+                          <option>2009</option>
+                          <option>2008</option>
+                      </select>
+                      <i class="fa-solid fa-circle-check"></i>
+                      <small>asdasdasdaads</small>
+                    </li>
+                    <li class="inp_block success">
+                      <label>Жанр</label>
+                      <select id="genre_film">
+                          <option>Кинокомикс</option>
+                          <option>Фантастика</option>
+                          <option>Вестерн</option>
+                          <option>Боевик</option>
+                          <option>Мультфильм</option>
+                          <option>Детектив</option>
+                          <option>Драма</option>
+                          <option>Исторический фильм</option>
+                          <option>Ужасы</option>
+                          <option>Комедия</option>
+                          <option>Мелодрама</option>
+                          <option>Музыкальный фильм</option>
+                          <option>Нуар</option>
+                          <option>Политический фильм</option>
+                          <option>Приключенческий фильм</option>
+                          <option>Сказка</option>
+                          <option>Трагедия</option>
+                          <option>Трагикомедия</option>
+                      </select>
+                      <i class="fa-solid fa-circle-check"></i>
+                      <small>asdasdasdaads</small>
+                    </li>
+                    <li class="inp_block error">
+                      <label >Описание</label>
+                      <textarea  id="description_film" maxlength="500" onkeyup="changeChar(this)"></textarea>
+                      <i class="fa-solid fa-circle-info"></i>
+                      <div>Допустимое количество символов : <span id="char_index">500</span></div>
+                    </li>
+                    <li class="inp_block error" >
+                      <label>Продюсер</label>
+                      <input id="producer_film" onkeyup="changeText(this)">
+                      <i class="fa-solid fa-circle-info"></i>
+                    </li>
+                    <li class="inp_block error">
+                      <label>Введите длительность фильма</label>
+                      <input id="long_film" onkeyup="changeText(this)">
+                      <i class="fa-solid fa-circle-info"></i>
+                    </li>
+                    <li><button class="btn btn-outline-danger">Добавить</button></li>
+                  </ul>
+                </form>
+                </div>
+              </div>
+            </div>
+            <div  id="cinema_all" class="cinema_all" style="width: 100%;">
+                <div class="header_block_filter">
+                    <h2>Новинки на нашем сервисе</h2>
+                    <div style="width: 100%;">
+                        <select onchange="sortFilm(this)">
+                          <option>Все фильмы</option>
+                          <option>Кинокомикс</option>
+                          <option>Фантастика</option>
+                          <option>Вестерн</option>
+                          <option>Боевик</option>
+                          <option>Мультфильм</option>
+                          <option>Детектив</option>
+                          <option>Драма</option>
+                          <option>Исторический фильм</option>
+                          <option>Ужасы</option>
+                          <option>Комедия</option>
+                          <option>Мелодрама</option>
+                          <option>Музыкальный фильм</option>
+                          <option>Нуар</option>
+                          <option>Политический фильм</option>
+                          <option>Приключенческий фильм</option>
+                          <option>Сказка</option>
+                          <option>Трагедия</option>
+                          <option>Трагикомедия</option>
+                        </select>
+                        <button onclick="registrationCinemaPage()">Добавить киноафишу <i class="fa-solid fa-film"></i></button>
+                    </div>
+                </div>
+                <div class="list_cinema" id="list_cinema">
+                    <div class="example-2 card">
+                        <div class="wrapper">
+                          <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg"> 
+                          <div class="header">
+                            <div class="date">
+                              <span class="day">12</span>
+                              <span class="month">Aug</span>
+                              <span class="year">2016</span>
+                            </div>
+                            <ul class="menu-content">
+                              <li>
+                                <a href="#" class="fa fa-bookmark-o"></a>
+                              </li>
+                              <li><i class="fa-regular fa-heart"><span>18</span></i></li>
+                              <li><i class="fa-regular fa-comment"><span>18</span></i></li>
+                            </ul>
+                          </div>
+                          <div class="data">
+                            <div class="content">
+                              <span class="author">Jane Doe</span>
+                              <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
+                              <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                              <a href="#" class="button">Read more</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="example-2 card">
+                        <div class="wrapper">
+                          <img src="https://kvmarvel.ru/wp-content/uploads/2019/01/avengers-endgame-final-poster.jpg"> 
+                          <div class="header">
+                            <div class="date">
+                              <span class="day">12</span>
+                              <span class="month">Aug</span>
+                              <span class="year">2016</span>
+                            </div>
+                            <ul class="menu-content">
+                              <li>
+                                <a href="#" class="fa fa-bookmark-o"></a>
+                              </li>
+                              <li><i class="fa-regular fa-heart"><span>18</span></i></li>
+                              <li><i class="fa-regular fa-comment"><span>18</span></i></li>
+                            </ul>
+                          </div>
+                          <div class="data">
+                            <div class="content">
+                              <span class="author">Jane Doe</span>
+                              <h1 class="title"><a href="#">Мстители</a></h1>
+                              <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                              <a href="#" class="button">Read more</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="example-2 card">
+                        <div class="wrapper">
+                          <img src="https://gomelkino.by/wp-content/uploads/2023/03/afisha-13-717x1024.jpg"> 
+                          <div class="header">
+                            <div class="date">
+                              <span class="day">12</span>
+                              <span class="month">Aug</span>
+                              <span class="year">2016</span>
+                            </div>
+                            <ul class="menu-content">
+                              <li>
+                                <a href="#" class="fa fa-bookmark-o"></a>
+                              </li>
+                              <li><i class="fa-regular fa-heart"><span>18</span></i></li>
+                              <li><i class="fa-regular fa-comment"><span>18</span></i></li>
+                            </ul>
+                          </div>
+                          <div class="data">
+                            <div class="content">
+                              <span class="author">Jane Doe</span>
+                              <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
+                              <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                              <a href="#" class="button">Read more</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="example-2 card">
+                        <div class="wrapper">
+                          <img src="https://xage.ru/media/uploads/2008/2/posteryi-luchshih-filmov-poluchivshih-oskar/posteryi-luchshih-filmov-poluchivshih-oskar_1.jpg"> 
+                          <div class="header">
+                            <div class="date">
+                              <span class="day">12</span>
+                              <span class="month">Aug</span>
+                              <span class="year">2016</span>
+                            </div>
+                            <ul class="menu-content">
+                              <li>
+                                <a href="#" class="fa fa-bookmark-o"></a>
+                              </li>
+                              <li><i class="fa-regular fa-heart"><span>18</span></i></li>
+                              <li><i class="fa-regular fa-comment"><span>18</span></i></li>
+                            </ul>
+                          </div>
+                          <div class="data">
+                            <div class="content">
+                              <span class="author">Jane Doe</span>
+                              <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
+                              <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                              <a href="#" class="button">Read more</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="account_block" id="account_block" >
+            <div style="width: 100%;">
+                <div class="account_block_header">
+                    <h2><i class="fa-solid fa-users"></i>Пользователи</h2>
+                    <div style="width: 100%;">
+                        <input onkeyup="searchTable(this,document.getElementById('table_account'))" placeholder="Поиск">
+                    </div>
+                </div>
+                <table id="table_account" class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Аватар</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Логин</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Роль</th>
+                          <th scope="col">#</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody_account">
+                        <tr>
+                            <td scope="col">#</td>
+                            <td scope="col">Аватар</td>
+                            <td scope="col">ФИО</td>
+                            <td scope="col">Логин</td>
+                            <td scope="col">Статус</td>
+                            <td scope="col">Роль</td>
+                            <td scope="col">Дата регистрации</td>
+                            <td scope="col">#</td>
+                          </tr>
+                      </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="statistic_block" id="statistic_block" >
+            <div class="top_cinema_content">
+                <h1><i class="fa-solid fa-square"></i>Топ фильмов</h1>
+                <div class="list_top_cinema" id="list_top_cinema">
+                    <div class="top_cinema_block">
+                        <h2 class="rating_top">1</h2>
+                        <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg">
+                        <div>
+                            <ul>
+                                <li><h3>Stranger Things: The sound of the Upside Down</h3></li>
+                                <li><i class="fa-sharp fa-solid fa-heart"></i>like<span>12312</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top_cinema_block">
+                        <h2 class="rating_top">1</h2>
+                        <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg">
+                        <div>
+                            <ul>
+                                <li><h3>Stranger Things: The sound of the Upside Down</h3></li>
+                                <li><i class="fa-sharp fa-solid fa-heart"></i>like<span>12312</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top_cinema_block">
+                        <h2 class="rating_top">1</h2>
+                        <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg">
+                        <div>
+                            <ul>
+                                <li><h3>Stranger Things: The sound of the Upside Down</h3></li>
+                                <li><i class="fa-sharp fa-solid fa-heart"></i>like<span>12312</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top_cinema_block">
+                        <h2 class="rating_top">1</h2>
+                        <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg">
+                        <div>
+                            <ul>
+                                <li><h3>Stranger Things: The sound of the Upside Down</h3></li>
+                                <li><i class="fa-sharp fa-solid fa-heart"></i>like<span>12312</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top_cinema_block">
+                        <h2 class="rating_top">1</h2>
+                        <img src="https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg">
+                        <div>
+                            <ul>
+                                <li><h3>Stranger Things: The sound of the Upside Down</h3></li>
+                                <li><i class="fa-sharp fa-solid fa-heart"></i>like<span>12312</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <div class="top_cinema_all_stat">
+                <div style="width: 100%; background-color: rgba(0, 0, 0, 0.521);" >
+                    <canvas style="max-height: 500px;" width="100%" id="acquisitions"></canvas>
+                </div>
+                <div style="height: 100%;">
+                    <div class="list_item_stat_content">
+                        <div class="item_stat_content">
+                            <h4>Пользователи</h4>
+                            <i class="fa-solid fa-users"><span id="user_stat">123123</span></i>
+                        </div>
+                        <div class="item_stat_content">
+                            <h4>Доступно кино</h4>
+                            <i class="fa-solid fa-film"><span id="film_stat">123123</span></i>
+                        </div>
+                        <div class="item_stat_content">
+                            <h4>Черный список</h4>
+                            <i class="fa-solid fa-user-lock"><span id="block_user_stat">123123</span></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="profile_block" id="profile_block" >
+            <form style="width: 20%;" id="settins_form">
+                <div class="inp_block img_block">
+                    <img src="./images/Icon.jpg">
+                    <input onchange="changePhoto(this)" type="file" name="" id="profil_photo">
+                    <label for="profil_photo">Загрузить фото</label>
+                </div>
+                <div class="inp_block">
+                    <label>Ваше имя</label>
+                    <input id="sett_name">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Вашу фамилию</label>
+                    <input id="sett_last_name">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваше отчество</label>
+                    <input id="sett_patronymic">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваш login</label>
+                    <input id="sett_login">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <div class="inp_block">
+                    <label>Ваш password</label>
+                    <input id="sett_password">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <small>asdasdasdaads</small>
+                </div>
+                <button id="liveAlertBtn" type="submit" class="btn btn-outline-danger">Сохранить</button>
+                <div id="liveAlertPlaceholder" ></div>
+            </form>
+        </div>
+      </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js" ></script>
+        <script src="./js/nav_bar.js"></script>
+        <script src="./js/action.js"></script>
+        <script src="./js/validation.js"></script>
+        <script src="./js/chart.js"></script>
+        <script src="./js/ini.js"></script>
+    </body>
+</html>
